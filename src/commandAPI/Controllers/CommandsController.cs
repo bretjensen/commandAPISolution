@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace commandAPI.Controllers {
+namespace CommandAPI.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
     public class CommandsController : ControllerBase {

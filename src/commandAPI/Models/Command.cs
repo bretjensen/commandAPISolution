@@ -1,15 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace commandAPI.Models
-{
-    public class Command
-    {
+namespace CommandAPI.Models {
+    public class Command {
         [Key]
         [Required]
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(250)]
+        [MaxLength (250)]
         public string HowTo { get; set; }
 
         [Required]
