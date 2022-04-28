@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using CommandAPI.Models;
 
-namespace CommandApi.Data {
+namespace CommandAPI.Data {
     public interface ICommandAPIRepo {
-        bool SaveChanges ();
+        bool SaveChanges();
 
-        IEnumerable<Command> GetAllCommands ();
-        Command GetCommandById (int id);
-        void CreateCommand (Command cmd);
-        void UpdateCommand (Command cmd);
-        void DeleteCommand (Command cmd);
+        IEnumerable<Command> GetAllCommands();
+        Command GetCommandById(int id);
+        void CreateCommand(Command cmd);
+        void UpdateCommand(Command cmd);
+        void DeleteCommand(Command cmd);
     }
 }
