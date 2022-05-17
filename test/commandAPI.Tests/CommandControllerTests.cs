@@ -235,6 +235,40 @@ namespace CommandAPI.Tests
             Assert.IsType<NotFoundResult>(result);
         }
 
+        [Fact]
+        public void DeleteCommand_Returns204NoContent_WhenValidResourceIDSubmitted()
+        {
+            // Given
+            mockRepo.Setup(repo => repo.GetCommandById(1)).Returns(new Command
+            {
+                Id = 1,
+                HowTo = "mock",
+                Platform = "mock",
+                CommandLine = "mock"
+            });
+            var controller = new CommandsController(mockRepo.Object, mapper);
+
+            // When
+            var result = controller.DeleteCommand(1);
+
+            // Then
+            Assert.IsType<NoContentResult>(result);
+        }
+
+        [Fact]
+        public void DeleteCommand_Returns404NotFound_WhenNonExistentResourceIDSubmitted()
+        {
+            // Given
+            mockRepo.Setup(repo => repo.GetCommandById(0)).Returns(() => null);
+            var controller = new CommandsController(mockRepo.Object, mapper);
+
+            // When
+            var result = controller.DeleteCommand(0);
+
+            // Then
+            Assert.IsType<NotFoundResult>(result);
+        }
+
         private List<Command> GetCommands(int num)
         {
             var commands = new List<Command>();
