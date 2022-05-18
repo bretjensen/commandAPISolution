@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EC27560B-5D95-4888-BE59-FA9A4EBDF465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandAPI", "src\CommandAPI\CommandAPI.csproj", "{6F777798-0353-41DC-9F32-D87FA737EA8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandAPI", ".\src\CommandAPI\CommandAPI.csproj", "{6F777798-0353-41DC-9F32-D87FA737EA8F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A286EA7B-194F-437E-B136-85EA8CEDCED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandAPI.Tests", "test\CommandAPI.Tests\CommandAPI.Tests.csproj", "{0DAE4201-C4D5-4AB1-A270-3B4FC279BC5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandAPI.Tests", ".\test\CommandAPI.Tests\CommandAPI.Tests.csproj", "{0DAE4201-C4D5-4AB1-A270-3B4FC279BC5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
