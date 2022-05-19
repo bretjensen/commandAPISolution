@@ -266,7 +266,7 @@ namespace CommandAPI.Tests
             var result = controller.DeleteCommand(0);
 
             // Then
-            Assert.IsType<OkObjectResult>(result);
+            Assert.IsType<NotFoundResult>(result);
         }
 
         private List<Command> GetCommands(int num)
