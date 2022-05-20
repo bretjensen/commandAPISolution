@@ -6,6 +6,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  System.Debug: true
 
 steps:
 - task: UseDotNet@2
