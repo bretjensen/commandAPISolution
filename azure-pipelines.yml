@@ -19,11 +19,7 @@ steps:
     projects: '**/*Tests/*.csproj'
     testRunTitle: 'xUnit Test Run'
 - task: UseDotNet@2
+- script: dotnet publish src/commandAPI/*.csproj --configuration $(buildConfiguration) --output $(Build.ArtifactsStagingDirectory)
   displayName: 'dotnet publish'
-  inputs:
-    command: publish
-    publishWebProjects: false
-    projects: 'src/commandAPI/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactsStagingDirectory)'
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
