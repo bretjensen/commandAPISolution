@@ -9,9 +9,6 @@ variables:
 
 steps:
 - task: UseDotNet@2
-  inputs:
-    version: 6.0.x
-- task: UseDotNet@2
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 - task: DotNetCoreCLI@2
@@ -20,12 +17,9 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
     testRunTitle: 'xUnit Test Run'
-- task: DotNetCoreCLI@2
+- task: CopyFiles@2
   displayName: 'dotnet publish'
   inputs:
-    command: publish
-    publishWebProjects: false
-    projects: 'src/commandAPI/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactsStagingDirectory)'
+    TargetFolder: '$(Build.ArtifactsStagingDirectory)'
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
