@@ -6,6 +6,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  buildVersion: 'net6.0'
 
 steps:
 - task: UseDotNet@2
@@ -18,13 +19,17 @@ steps:
      projects: '**/*Tests/*.csproj'
      testRunTitle: 'xUNit Test Run'
 
-- task: DotNetCoreCLI@2
-  displayName: 'dotnet publish'
+- task: PublishPipelineArtifact@1
   inputs:
-    command: publish
-    publishWebProjects: false
-    projects: 'src/CommandAPI/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    targetPath: src/CommandAPI/bin/$(buildConfiguration)/$(buildVersion)
+    artifactName: commandAPI
+# - task: DotNetCoreCLI@2
+#   displayName: 'dotnet publish'
+#   inputs:
+#     command: publish
+#     publishWebProjects: false
+#     projects: 'src/CommandAPI/*.csproj'
+#     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'publish artifacts'
+# - task: PublishBuildArtifacts@1
+#   displayName: 'publish artifacts'
