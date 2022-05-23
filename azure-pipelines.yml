@@ -21,7 +21,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: src/CommandAPI/bin/$(buildConfiguration)/$(buildVersion)
+    targetPath: src/commandAPI/bin/$(buildConfiguration)/$(buildVersion)
     artifactName: commandAPI
 # - task: DotNetCoreCLI@2
 #   displayName: 'dotnet publish'
